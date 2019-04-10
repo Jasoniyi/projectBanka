@@ -10,7 +10,7 @@ const loginModal = document.querySelector('.bg-modal');
 const registerBox = document.getElementById('register');
 const registerModal = document.querySelector('.bg-reg-modal');
 const registerCloseicon = document.querySelector('.closeReg');
-
+const callBtn = document.getElementById('callBtn');
 
 // Opens up login Modal popup
 loginBox.addEventListener('click', function () {
@@ -32,5 +32,10 @@ registerBox.addEventListener('click', function () {
 registerCloseicon.addEventListener('click', function (){
 	banner_Text.style.display = 'block';
 	registerModal.style.display = 'none';
+});
+
+callBtn.addEventListener('click', function () {
+    banner_Text.style.display = 'none';
+	registerModal.style.display = 'block';
 });
 
