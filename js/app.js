@@ -21,7 +21,8 @@ const callBtn = document.getElementById('callBtn');
 loginBox.addEventListener('click', function () {
     banner_Text.style.display = 'none';
 	loginModal.style.display = 'flex';
-
+	adminName.value = '';
+	userName.value = '';
 });
 
 
@@ -29,11 +30,7 @@ loginBox.addEventListener('click', function () {
 registerBox.addEventListener('click', function () {
     banner_Text.style.display = 'none';
 	registerModal.style.display = 'block';
-	// fnameError.innerHTML = '';
-	// lnameError.innerHTML = '';
-	// emailError.innerHTML = '';
-	// regPasswordError.innerHTML = '';
-	// confirmPasswordError.innerHTML = '';
+
 });
 // Closes the Register Modal popup with the Register close icon
 registerCloseicon.addEventListener('click', function (){
@@ -72,9 +69,10 @@ loginCloseAdminicon.addEventListener('click', function (){
 });
 
 // Validate Login form
+const userName = document.getElementById('username');
+const password = document.getElementById('password');
 function validateLoginForm(e){
-	const userName = document.getElementById('username');
-	const password = document.getElementById('password');
+	
 	if(userName.value.length == 0) {
 		userName.className = "error";
 		errorMsgUser.style.color = 'red';
@@ -95,9 +93,13 @@ function validateLoginForm(e){
 	
 }
 
+// Validate Login form
+const adminName = document.getElementById('adminUsername');
+const adminpassword = document.getElementById('adminPassword');
+
 function validateAdminLoginForm() {
-	const adminName = document.getElementById('adminUsername');
-	const adminpassword = document.getElementById('adminPassword');
+	
+	const select = document.getElementById('role');
 	if(adminName.value.length == 0) {
 		adminName.className = "error";
 		errorMsgUser.innerHTML = '';
@@ -110,7 +112,14 @@ function validateAdminLoginForm() {
 		adminErrMsg.style.color = 'red'
 		adminErrMsg.innerHTML = 'password can\'t be less than 6 letters';
 		
-	} else {
+	} else if(select.value == ""){
+		errorMsgUser.innerHTML = '';
+		adminErrMsg.style.color = 'red'
+		adminErrMsg.innerHTML = 'Please select a job role';
+	} else if(select.value == "staff"){
+		window.location.href='staffDashboard.html';
+	}
+	else {
 		window.location.href='adminDashboard.html';
 	}
 }

@@ -34,7 +34,7 @@
               <h3>User Login</h3> 
             </div>
             <div class="admin-link" id="adminLogin">
-             <h3>Admin Login</h3> 
+             <h3>Staff Login</h3> 
             </div>
              <div class="close">
               +
@@ -61,7 +61,7 @@
                 <h3>User Login</h3> 
               </div></a>
               <a href="#"></a><div class="admin-link admin-link-bck" id="adminLogin">
-               <h3>Admin Login</h3> 
+               <h3>Staff Login</h3> 
               </div></a>
                <div class="close closeAdmin">
                 +
@@ -72,7 +72,12 @@
               <p class="adminErrMsg" id="adminErrMsg"></p>
             <input type="email" onfocus="this.value=''" placeholder="Email" id="adminUsername"/>
             <input type="password" placeholder="Password" id="adminPassword" />
-            <!-- <a href="#"><p class="psw" id="psw">Forgot password?</a></p> -->
+            <!-- <label for="Role">Job Role</label> -->
+                <select id="role" name="Job Role" aria-placeholder="jobrole">
+                    <option value="" hidden>Job Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="staff">Cashier</option>
+                </select>
             <button type="button" class="modalbtn" id="adminLoginBtn" onclick="validateAdminLoginForm()">Login</button>
           </form>
         </div>
