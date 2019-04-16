@@ -333,6 +333,10 @@ button:hover {
 	 flex-grow: 1;
 	 padding:50px;
  }
+ .acctform {
+	 width: 70%;
+	 margin-left: 15%;
+ }
 
  td a {
 	 display: block;
