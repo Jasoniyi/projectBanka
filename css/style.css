@@ -12,6 +12,7 @@ body{
 	padding: 0;
 	display: flex;
 	flex-direction: column;
+	cursor: pointer;
 
 }
 
@@ -56,10 +57,15 @@ input[type=text], input[type=password], input[type=number], select, input[type=d
   margin: 10px auto;
   border: none;
   cursor: pointer;
-	width: 60%;
-	display: block;
-	font-size: 18px;
+  width: 60%;
+  display: block;
+  font-size: 18px;
 	
+}
+.regbtn {
+	background-color: red;
+	margin-top: 50px;
+	width: 40%;
 }
 
 button:hover {
@@ -690,6 +696,9 @@ article#main-col  {
 .user-link h3{
 	color: #030008;
 }
+.user-link:hover, .admin-link:hover {
+	background-color: rgba(20,10,37,.1);
+}
 
 .admin-link{
 	float: right;
@@ -706,19 +715,22 @@ article#main-col  {
 }
 
 .user-link-bck {
-	background-color: rgba(219,43,48,.4);
+	background-color: rgba(20,10,37,.4);
 }
+
+
 .admin-link-bck {
-	background-color: rgba(219,43,48,.4);
+	background-color: rgba(20,10,37,.4);
 	color: #fff;
 }
-.error {
-	margin-top: -1em;
-	float: left;
-}
+
 .error {
 	color: red;
 	animation: shake 0.5s;
 	animation-iteration-count: 2;
+}
+
+.adminErrMsg, .errorMsgUser {
+	margin-top: 15px;
 }
 

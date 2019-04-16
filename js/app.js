@@ -21,6 +21,7 @@ const callBtn = document.getElementById('callBtn');
 loginBox.addEventListener('click', function () {
     banner_Text.style.display = 'none';
 	loginModal.style.display = 'flex';
+
 });
 
 
@@ -28,6 +29,11 @@ loginBox.addEventListener('click', function () {
 registerBox.addEventListener('click', function () {
     banner_Text.style.display = 'none';
 	registerModal.style.display = 'block';
+	// fnameError.innerHTML = '';
+	// lnameError.innerHTML = '';
+	// emailError.innerHTML = '';
+	// regPasswordError.innerHTML = '';
+	// confirmPasswordError.innerHTML = '';
 });
 // Closes the Register Modal popup with the Register close icon
 registerCloseicon.addEventListener('click', function (){
@@ -71,17 +77,20 @@ function validateLoginForm(e){
 	const password = document.getElementById('password');
 	if(userName.value.length == 0) {
 		userName.className = "error";
-		errorMessage.innerHTML = 'Username can\'t be blank';
-		errorAdminMessage.innerHTML = '';
+		errorMsgUser.style.color = 'red';
+		errorMsgUser.innerHTML = 'email is required';
+		userName.focus();
+		
 	}
 	else if(password.value.length < 6) {
 		userName.className = "error";
-		psw.textContent = '';
-		passwordError.innerHTML = 'password can\'t be less than 6 letters';
-		passwordAdminError.innerHTML = '';
+		errorMsgUser.style.color = 'red';
+		errorMsgUser.innerHTML = 'Password is required';
+		password.focus()
+		
 		
 	} else {
-		window.location.href='staffDashboard.html'
+		window.location.href='userDashboard.html'
 	}
 	
 }
@@ -91,15 +100,103 @@ function validateAdminLoginForm() {
 	const adminpassword = document.getElementById('adminPassword');
 	if(adminName.value.length == 0) {
 		adminName.className = "error";
-		errorMessage.innerHTML = '';
-		errorAdminMessage.innerHTML = 'Username can\'t be blank';
+		errorMsgUser.innerHTML = '';
+		adminErrMsg.style.color = 'red'
+		adminErrMsg.innerHTML = 'email is required';
 	}
 	else if(adminpassword.value.length < 6) {
 		adminName.className = "error";
-		psw.innerHTML = '';
-		passwordAdminError.innerHTML = 'password can\'t be less than 6 letters';
+		errorMsgUser.innerHTML = '';
+		adminErrMsg.style.color = 'red'
+		adminErrMsg.innerHTML = 'password can\'t be less than 6 letters';
 		
 	} else {
-		window.location.href='adminDashboard.html'
+		window.location.href='adminDashboard.html';
 	}
 }
+
+const fname = document.getElementById('fname');
+const lname = document.getElementById('lname');
+const email = document.getElementById('email');
+const regPassword = document.getElementById('regPassword');
+const confirmPassword	= document.getElementById('confirmPassword');
+
+function valdateRegistration() {
+	
+
+	// if(fname.value.length == 0){
+	// 	fname.className = "error";
+	// 	fnameError.innerHTML = "First name is required";
+	// }
+	// if(lname.value.length == 0){
+	// 	fname.className = "error";
+	// 	lnameError.innerHTML = "Last name is required";
+	// }
+	// if(email.value.length == 0){
+	// 	email.className = "error";
+	// 	emailError.innerHTML = "email is required";
+	// }
+	// if(regPassword.value.length == 0){
+	// 	regPassword.className = "error";
+	// 	regPasswordError.innerHTML = "password is required";
+	// }
+	// if(confirmPassword != regPassword){
+	// 	confirmPassword.className = "error";
+	// 	confirmPasswordError.innerHTML = "Passwords do not match";
+	// } else {
+	// 	window.location.href='userCreateAccountDashboard.html'
+	// }
+
+}
+
+//Registration parameters
+
+window.onload = function(){
+	const fname = document.getElementById('fname');
+	const lname = document.getElementById('lname');
+	const registerBtn = document.getElementById('registerBtn');
+	
+	registerBtn.onclick = (e)=>{
+		e.preventDefault();
+		validate();
+	}
+}
+
+
+const validate =  ()=>{
+	const errMsgCont = document.querySelector('.errorMessage');
+	errMsgCont.textContent='';
+	console.log(errMsgCont);
+	errMsgCont.style.color = 'red';
+
+
+	if (fname.value===''){
+		errMsgCont.textContent = 'First name is required';
+		fname.focus();
+		return false;
+	}
+	if (lname.value===''){
+		errMsgCont.textContent = 'Last name is required';
+		lname.focus();
+		return false;
+	}
+	if (email.value===''){
+		errMsgCont.textContent = 'Email is required';
+		email.focus();
+		return false;
+	}
+	if (regPassword.value===''){
+		errMsgCont.textContent = 'Password is required';
+		regPassword.focus();
+		return false;
+	}
+	if (regPassword.value != confirmPassword.value){
+		errMsgCont.textContent = 'Password do not match';
+		confirmPassword.focus();
+		return false;
+	} else {
+		window.location.href='userCreateAcctDashboard.html';
+	}
+}
+
+
