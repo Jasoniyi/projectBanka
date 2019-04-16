@@ -26,27 +26,92 @@
       </ul>
     </header>
 
-    <!-- Modal Content  for login-->
-    <div class="bg-modal" id="bg-modal">
-      <div class="modal-content modal-content-sm">
-        <div class="close">
-          +
+      <!-- Modal Content  for user login-->
+      <div class="bg-modal" id="bg-userModal">
+        <div class="modal-content modal-content-sm">
+          <div class="modal-header">
+            <div class="user-link user-link-bck" id="userLogin">
+              <h3>User Login</h3> 
+            </div>
+            <div class="admin-link" id="adminLogin">
+             <h3>Admin Login</h3> 
+            </div>
+             <div class="close">
+              +
+             </div>
+         </div>
+          <!-- <h3 class="show_header">Login to your user account</h3> -->
+          <form action="staffDashboard.html" method="POST" class="validateLoginForm" >
+            <input type="email" onfocus="this.value=''" placeholder="Email" id="username"/>
+            <p class="error" id="errorMessage"></p>
+            <input type="password" placeholder="Password" id="password" />
+            <p class="error" id="passwordError"></p>
+            <!-- <a href="#"><p class="psw" id="psw">Forgot password?</a></p> -->
+            <button type="button" class="modalbtn" id="loginBtn" onclick="validateLoginForm()">Login</button>
+          </form>
         </div>
-        <h3 class="show_header">Login to your user account</h3>
-        <form action="userDashboard.html">
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button type="submit" class="modalbtn">Login</button>
-          <label class="rem">
-            <input type="checkbox" checked="unchecked" name="remember" />
-            Remember me
-          </label>
-          <span class="psw">Forgot <a href="#">password?</a></span>
-        </form>
       </div>
-    </div>
+  
+      <!--Ends Modal -->
+  
+      <!-- Modal Content  for admin login-->
+      <div class="bg-modal" id="bg-adminModal">
+          <div class="modal-content modal-content-sm">
+            <div class="modal-header">
+              <a href="#"><div class="user-link" id="userLoginn">
+                <h3>User Login</h3> 
+              </div></a>
+              <a href="#"></a><div class="admin-link admin-link-bck" id="adminLogin">
+               <h3>Admin Login</h3> 
+              </div></a>
+               <div class="close closeAdmin">
+                +
+               </div>
+           </div>
+            <!-- <h3 class="show_header">Login to your user account</h3> -->
+          <form action="adminDashboard.html" method="POST" class="validateLoginForm" >
+            <input type="email" onfocus="this.value=''" placeholder="Email" id="adminUsername"/>
+            <p class="error" id="errorAdminMessage"></p>
+            <input type="password" placeholder="Password" id="adminPassword" />
+            <p class="error" id="passwordAdminError"></p>
+            <!-- <a href="#"><p class="psw" id="psw">Forgot password?</a></p> -->
+            <button type="button" class="modalbtn" id="loginBtn" onclick="validateAdminLoginForm()">Login</button>
+          </form>
+        </div>
+      </div>
+    
+        <!--Ends Modal -->
+  
+      <div class="bg-modal" id="bg-modal">
+        <div class="modal-content modal-content-sm">
+          <div class="modal-header">
+            <div class="user-link" id="userLogin">
+              <h3>User Login</h3> 
+            </div>
+            <div class="admin-link" id="adminLogin">
+             <h3>Admin Login</h3> 
+            </div>
+             <div class="close">
+              +
+             </div>
+         </div>
+          <!-- <h3 class="show_header">Login to your user account</h3> -->
+          <form action="userDashboard.html">
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <a href="#"><span class="psw">Forgot password?</a></span>
+            <button type="submit" class="modalbtn">Login</button>
+            <!-- <label class="rem">
+              <input type="checkbox" checked="unchecked" name="remember" />
+              Remember me
+            </label> -->
+          </form>
+        </div>
+      </div>
+  
+      <!--Ends Modal -->
 
-    <!--Ends Modal -->
+   
 
     <!-- Modal Content  for register-->
     <div class="bg-reg-modal" id="bg-reg-modal">
