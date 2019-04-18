@@ -12,8 +12,6 @@ body{
 	padding: 0;
 	display: flex;
 	flex-direction: column;
-	cursor: pointer;
-
 }
 
 /*  Global */
@@ -218,7 +216,7 @@ button:hover {
 	position: relative;
 	border: 1px solid #888;
 	z-index: 9999;
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 
@@ -277,7 +275,7 @@ button:hover {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.4);
-	opacity: 0.7;
+	opacity: 0.9;
 	position: absolute;
 	top: 0;
 	display: none;
@@ -298,7 +296,7 @@ button:hover {
 	position: relative;
 	border: 1px solid #888;
 	z-index: 9999;
-  margin: 120px auto;
+    margin: 120px auto;
 }
 
 
@@ -599,7 +597,14 @@ button:hover {
 		text-align: center;
 	}
 
-	
+	.close:hover, .close:focus, .closeReg:hover, .closeUser:hover {
+		color: red;
+		cursor: pointer;
+	}
+
+	.btnLeft, .btnRight {
+		margin-top: -1em;
+	}
 
 
 }
@@ -629,6 +634,12 @@ button:hover {
 		padding-top: 10px;
 		font-size: 3em;
 	 }	
+	 .responce {
+		height: 8em;
+	}
+	.btnLeft{
+		width: 40%;
+	}
 }
 
 /* Media query for mobile device */
@@ -693,6 +704,10 @@ article#main-col  {
 	width: 100%;
 	text-align: left
 }
+.btnLeft, .btnRight {
+	margin-top: -2em;
+}
+
 }
 
 /* --- new css--*/
@@ -779,4 +794,10 @@ article#main-col  {
 .body-content {
 	min-height: calc(100vh - 130px);
 }
+
+.message {
+	font-size: 24px;
+	color: #ffffff !important;
+}
+
 
