@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import router from './router';
 
 import accountsRouter from './router/account';
- import transactionRouter from './router/'
+import transactionRouter from './router/'
 
 require('dotenv').config();
 

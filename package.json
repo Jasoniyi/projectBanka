@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node index.js",
-    "test": "cross-env NODE_ENV=test nyc mocha ./__test__/*.js  --require @babel/register --exit",
+    "start": "babel-node server/index.js",
+    "test": "cross-env NODE_ENV=test nyc mocha server/__test__/*.js  --require @babel/register --exit --timeout 4000",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
@@ -38,10 +38,11 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/register": "^7.4.0",
     "babel-core": "^6.26.3",
-    "bcrypt": "^3.0.5",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "cross-env": "^5.2.0",
     "dotenv": "^7.0.0",
+    "eslint-config-airbnb": "^17.1.0",
     "express": "^4.16.4",
     "istanbul": "^0.4.5",
     "jsonwebtoken": "^8.5.1",

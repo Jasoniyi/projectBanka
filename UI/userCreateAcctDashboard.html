@@ -8,17 +8,19 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"/>
 </head>
 <body>
-
+    <div class="head">
 		<header class="header">
-                <div class="header__brand adjust" id="brand">
+               <a href="index.html"> <div class="header__brand adjust" id="brand">
                      BANKA
                     <span class ="fa fa-eraser" ></span>
-                </div>
+                </div></a>
                 <div class="header__links">
                     <h3>Create Account</h3>
                 </div>
         </header>
-
+    </div>
+    
+    <div class="body-content">
 	<section class="dashboard-banner center">
 	<div class="container">
 		<h3>User Dashboard</h3>
@@ -28,19 +30,20 @@
 
 	<section class="acct-list center">
 		<div class="container">
-			<h1>Account Information</h1>
-			<form>
+			<!-- <h1>Account Information</h1> -->
+			<form class="acctform">
+                    <h1>Account Information</h1>
                 <label for="Account Number">Account Number</label>
-                <input type="text" id="AccountName" placeholder="1234566 ">
+                <input type="text" id="AccountName" value="123456633" readonly>
                 
                 <label for="First Name">First Name</label>
-                <input type="text" id="firstName" placeholder="Type your First Name.. ">
+                <input type="text" id="firstName" value="Bill" readonly>
 
                 <label for="Last Name">Last Name</label>
-                <input type="text" id="lastName" placeholder="Type your Last Name.. ">
+                <input type="text" id="lastName" value="Gates" readonly>
 
                 <label for="email">Email</label>
-                <input type="email" id="AccountName" placeholder="Type your Email..">
+                <input type="email" id="AccountName" value="billgates@xyz.com" readonly>
 
                 <label for="Account Type">Account Type</label>
                 <select id="country" name="country">
@@ -48,8 +51,6 @@
                     <option value="current">Current</option>
                 </select>
 
-                <label for="balance">Beginning Balance</label>
-                <input type="number" placeholder="0.00">
 
                 <label for="Date">Beginning Date</label>
                 <input type="date" placeholder="...">
@@ -63,7 +64,7 @@
 
 		
 	</section>
-
+</div>
 
 	<footer class="center">
 		<p>© 2019 Banka. All Rights Reserved </p>

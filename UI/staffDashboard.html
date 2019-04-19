@@ -3,63 +3,83 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Banka App | Staff Dashboard</title>
+    <title>Banka App | Admin Dashboard</title>
     <link rel="stylesheet" type="text/css" href=css/style.css>
     <link rel="stylesheet" type="text/css" href="./css/font-awesome-4.7.0//css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"/>
   </head>
   <body>
-    <header class="header">
-      <div class="header__brand" id="brand">
-        BANKA 
-        <span class="fa fa-eraser"></span>
-      </div>
-      <div class="header__links">
-        <h3>Staff view</h3>
-      </div>
-    </header>
 
+    <div class="head">
+    <header class="header">
+      <a href="index.html"><div class="header__brand" id="brand">
+        BANKA 
+      </div></a>
+      <ul class="header__links">
+        <li id="login" class="dropdown adminIcon-sm">
+          <a href="#" class="header__link dropbtn"
+            >Staff Account
+            
+          </a>
+          
+        </li>
+      </ul>
+    </header>
+  </div>
+
+    <div class="body-content">
     <section class="dashboard-banner center">
       <div class="container">
         <h3>Staff Dashboard</h3>
       </div>
     </section>
 
-    <section class="acct-list center acct-list-sm">
-       <div class="container centralize">
+    <div class="responce" id="responce">
+      <h4 class="textheader"></h4>
+      <button class="btnLeft">Yes</button>
+      <button class="btnRight">No</button>
+    </div>
+
+    <!-- <div class="viewAccount">
+
+    </div> -->
+
+    <section class="acct-list acct-list-sm">
+      <div class="container centralize">
         <h3>Account Lists</h3>
         <ul>
-          <li>
+          <li id="john">
             John Doe
             <span class="right">
               <a href="#"
-                ><span class ="fa fa-user-plus fa-2x fa-sm"  title="Activate account"></span>
+                ><span class ="fa fa-user-plus fa-2x fa-sm" id="activate" title="Activate account"></span>
               </a>
               <a href="#"
-                ><span class ="fa fa-user-times fa-2x fa-sm"  title="Deactivate account"></span>
+                ><span class ="fa fa-user-times fa-2x fa-sm" id="deactivate" title="Deactivate account"></span>
               </a>
               <a href="#"
-                ><span class ="fa fa-trash fa-2x fa-sm"  title="Delete account"></span>
+                ><span class ="fa fa-trash fa-2x fa-sm" id="deleteAcct" title="Delete account"></span>
               </a>
               <a href="adminViewRecord.html"
-                ><span class ="fa fa-search fa-2x fa-sm"  title="View account"></span>
+                ><span class ="fa fa-folder-open fa-2x fa-sm" id="view" title="View account"></span>
               </a>
             </span>
           </li>
-          <li>
+          <li id="jane">
+            
             Jane Doe
             <span class="right">
               <a href="#"
-                ><span class ="fa fa-user-plus fa-2x fa-sm"  title="Activate account"></span>
+                ><span class ="fa fa-user-plus fa-2x fa-sm" id="activate1" title="Activate account"></span>
               </a>
               <a href="#"
-                ><span class ="fa fa-user-times fa-2x fa-sm"  title="Activate account"></span>
+                ><span class ="fa fa-user-times fa-2x fa-sm" id="deactivate1" title="Activate account"></span>
               </a>
               <a href="#"
-                ><span class ="fa fa-trash fa-2x fa-sm"  title="Delete account"></span>
+                ><span class ="fa fa-trash fa-2x fa-sm" id="deleteAcct1" title="Delete account"></span>
               </a>
               <a href="adminViewRecord.html"
-                ><span class ="fa fa-search fa-2x fa-sm"  title="View account"></span>
+                ><span class ="fa fa-folder-open fa-2x fa-sm" id="view" title="View account"></span>
               </a>
             </span>
           </li>
@@ -67,16 +87,16 @@
             Jude Doe
             <span class="right">
               <a href="#"
-                ><span class ="fa fa-user-plus fa-2x fa-sm"  title="Activate account"></span>
+                ><span class ="fa fa-user-plus fa-2x fa-sm" id="activate2" title="Activate account"></span>
               </a>
               <a href="#"
-                ><span class ="fa fa-user-times fa-2x fa-sm"  title="Activate account"></span>
+                ><span class ="fa fa-user-times fa-2x fa-sm" id="deactivate2" title="Activate account"></span>
               </a>
               <a href="#"
-                ><span class ="fa fa-trash fa-2x fa-sm"  title="Delete account"></span>
+                ><span class ="fa fa-trash fa-2x fa-sm" id="deleteAcct2" title="Delete account"></span>
               </a>
               <a href="adminViewRecord.html"
-                ><span class ="fa fa-search fa-2x fa-sm"  title="View account"></span>
+                ><span class ="fa fa-folder-open fa-2x fa-sm" id="view" title="View account"></span>
               </a>
             </span>
           </li>
@@ -84,25 +104,28 @@
             Janet Doe
             <span class="right">
               <a href="#"
-                ><span class ="fa fa-user-plus fa-2x fa-sm"  title="Activate account"></span>
+                ><span class ="fa fa-user-plus fa-2x fa-sm" id="activate3" title="Activate account"></span>
               </a>
               <a href="#"
-                ><span class ="fa fa-user-times fa-2x fa-sm"  title="Activate account"></span>
+                ><span class ="fa fa-user-times fa-2x fa-sm" id="deactivate3" title="Activate account"></span>
               </a>
               <a href="#"
-                ><span class ="fa fa-trash fa-2x fa-sm"  title="Delete account"></span>
+                ><span class ="fa fa-trash fa-2x fa-sm" id="deleteAcct3" title="Delete account"></span>
               </a>
               <a href="adminViewRecord.html"
-                ><span class ="fa fa-search fa-2x fa-sm"  title="View account"></span>
+                ><span class ="fa fa-folder-open fa-2x fa-sm" id="view" title="View account"></span>
               </a>
             </span>
           </li>
         </ul>
-      <!-- </div> -->
+      </div>
     </section>
+  </div>
 
-    <footer class="center">
+    <footer class="center ft">
       <p>© 2019 Banka. All Rights Reserved</p>
     </footer>
+
+    <script src="js/display.js"></script>
   </body>
 </html>

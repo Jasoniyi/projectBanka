@@ -26,52 +26,97 @@
       </ul>
     </header>
 
-    <!-- Modal Content  for login-->
-    <div class="bg-modal" id="bg-modal">
+    <!-- Modal Content  for user login-->
+    <div class="bg-modal" id="bg-userModal">
       <div class="modal-content modal-content-sm">
-        <div class="close">
-          +
-        </div>
-        <h3 class="show_header">Login to your user account</h3>
-        <form action="userDashboard.html">
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button type="submit" class="modalbtn">Login</button>
-          <label class="rem">
-            <input type="checkbox" checked="unchecked" name="remember" />
-            Remember me
-          </label>
-          <span class="psw">Forgot <a href="#">password?</a></span>
+        <div class="modal-header">
+          <div class="user-link user-link-bck" id="userLogin">
+            <h3>User Login</h3> 
+          </div>
+          <div class="admin-link" id="adminLogin">
+           <h3>Staff Login</h3> 
+          </div>
+           <div class="close">
+            +
+           </div>
+       </div>
+        <!-- <h3 class="show_header">Login to your user account</h3> -->
+        <form action="staffDashboard.html" method="POST" class="validateLoginForm" >
+            <p class="errorMsgUser" id="errorMsgUser"></p>
+          <input type="email" onfocus="this.value=''" placeholder="Email" id="username"/>
+          <input type="password" placeholder="Password" id="password" />
+          <!-- <a href="#"><p class="psw" id="psw">Forgot password?</a></p> -->
+          <button type="button" class="modalbtn" id="loginBtn" onclick="validateLoginForm()">Login</button>
         </form>
       </div>
     </div>
 
     <!--Ends Modal -->
 
-    <!-- Modal Content  for register-->
-    <div class="bg-reg-modal" id="bg-reg-modal">
-      <div class="modal-content modal-content-sm">
-        <div class="closeReg">
-          +
-        </div>
-        <h3 class="show_header">Create your user account</h3>
-        <form action="userCreateAcctDashboard.html">
-          <input type="text" placeholder="Firstname" />
-          <input type="text" placeholder="Lastname" />
-          <input type="text" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <input type="password" placeholder="Confirm Password" />
-          <button type="submit" class="modalbtn">Register</button>
+    <!-- Modal Content  for admin login-->
+    <div class="bg-modal" id="bg-adminModal">
+        <div class="modal-content modal-content-sm">
+          <div class="modal-header">
+            <a href="#"><div class="user-link" id="userLoginn">
+              <h3>User Login</h3> 
+            </div></a>
+            <a href="#"></a><div class="admin-link admin-link-bck" id="adminLogin">
+             <h3>Staff Login</h3> 
+            </div></a>
+             <div class="close closeAdmin">
+              +
+             </div>
+         </div>
+          <!-- <h3 class="show_header">Login to your user account</h3> -->
+        <form action="adminDashboard.html" method="POST" class="validateLoginForm" >
+            <p class="adminErrMsg" id="adminErrMsg"></p>
+          <input type="email" onfocus="this.value=''" placeholder="Email" id="adminUsername"/>
+          <input type="password" placeholder="Password" id="adminPassword" />
+          <!-- <label for="Role">Job Role</label> -->
+              <select id="role" name="Job Role" aria-placeholder="jobrole">
+                  <option value="" hidden>Job Role</option>
+                  <option value="admin">Admin</option>
+                  <option value="staff">Cashier</option>
+              </select>
+          <button type="button" class="modalbtn" id="adminLoginBtn" onclick="validateAdminLoginForm()">Login</button>
         </form>
       </div>
     </div>
+  
+      <!--Ends Modal -->
 
-    <!--Ends Modal -->
 
+ 
+
+  <!-- Modal Content  for register-->
+  <div class="bg-reg-modal" id="bg-reg-modal">
+    <div class="modal-content modal-content-sm">
+      <div class="closeReg">
+        +
+      </div>
+      <h3 class="show_header">Create your user account</h3>
+      <div class="errorMessage"></div>
+      <form action="#">
+        <input type="text" placeholder="Firstname" id="fname"/>
+
+        <input type="text" placeholder="Lastname" id="lname" />
+        
+        <input type="text" placeholder="Email"  id="email"/>
+        
+        <input type="password" placeholder="Password" id="regPassword" />
+     
+        <input type="password" placeholder="Confirm Password" id="confirmPassword" />
+        
+        <button type="submit" class="modalbtn" id="registerBtn" onclick="valdateRegistration()">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <!--Ends Modal -->
     <section class="banner">
       <div class="container center" id="banner-text">
         <h1>Welcome To BANKA</h1>
-				<p>Your One-stop Banking Solution</p>
+				<p class="message">Your One-stop Banking Solution</p>
 				<button class="call-to-action" id="callBtn"> Get Started</button>
       </div>
     </section>
